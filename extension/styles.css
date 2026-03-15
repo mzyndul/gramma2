@@ -1,23 +1,31 @@
 .gramma2-icon {
   position: absolute;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: #4CAF50;
+  width: 32px;
+  height: 32px;
   z-index: 2147483647;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   display: none;
-  font-size: 14px;
-  color: white;
-  font-weight: bold;
   align-items: center;
   justify-content: center;
-  transition: transform 0.15s ease;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.gramma2-icon-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.28));
 }
 
 .gramma2-icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.06);
+}
+
+.gramma2-icon:hover .gramma2-icon-image {
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.34));
 }
 
 .gramma2-popup {

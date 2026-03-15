@@ -1,6 +1,10 @@
 # Gramma2
 
-Local-first browser writing assistant built as a Chrome extension plus FastAPI server. Focus any text field, click the floating **G** icon, choose a backend, review the suggestion, and apply it only if you want it.
+<p align="center">
+  <img src="assets/gramma2.png" alt="Gramma2 icon" width="140" />
+</p>
+
+Local-first browser writing assistant built as a Chrome extension plus FastAPI server. Focus any text field, click the floating Gramma2 icon, choose a backend, review the suggestion, and apply it only if you want it.
 
 ## Demo
 
@@ -42,7 +46,7 @@ Gramma2 is an open-source Grammarly-style experiment with explicit review UX: yo
 
 ## Features
 
-- Floating **G** icon on any focused text input, textarea, or contenteditable
+- Floating Gramma2 icon on any focused text input, textarea, or contenteditable
 - Local (Ollama) or Codex CLI backend — your choice per request
 - Single-suggestion review: see the correction, click to apply
 - Progressive long-text review: long text split into blocks, reviewed one at a time
@@ -77,7 +81,7 @@ Gramma2 is an open-source Grammarly-style experiment with explicit review UX: yo
 
 ## How It Works
 
-1. **Chrome extension** injects a floating **G** icon next to any focused text input, textarea, or contenteditable element
+1. **Chrome extension** injects a floating Gramma2 icon next to any focused text input, textarea, or contenteditable element
 2. Clicking the icon shows a toolbar with backend options: **Local** (Ollama) or **Codex** (via the `codex` CLI)
 3. The extension sends the text to a local Python server (`localhost:8555`) via the background service worker
 4. The server calls the chosen LLM backend and returns a corrected suggestion
@@ -135,7 +139,7 @@ This is an unpacked developer extension. It is not yet available on the Chrome W
 ### Use it
 
 1. Focus any text input on any web page
-2. Click the green **G** icon
+2. Click the floating Gramma2 icon
 3. Pick **Local** or **Codex** from the toolbar
 4. Click the suggestion to replace your text
 

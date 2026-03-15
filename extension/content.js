@@ -1437,7 +1437,13 @@ function finishAggressiveApplyAll() {
 
 iconEl = document.createElement("div");
 iconEl.className = "gramma2-icon";
-iconEl.innerHTML = "G";
+iconEl.setAttribute("role", "button");
+iconEl.setAttribute("aria-label", "Open Gramma2");
+const iconImageEl = document.createElement("img");
+iconImageEl.className = "gramma2-icon-image";
+iconImageEl.src = chrome.runtime.getURL("gramma2.png");
+iconImageEl.alt = "";
+iconEl.appendChild(iconImageEl);
 iconEl.style.display = "none";
 document.body.appendChild(iconEl);
 
