@@ -43,7 +43,7 @@ Gramma2 is an open-source Grammarly-style experiment with explicit review UX: yo
 ## Features
 
 - Floating **G** icon on any focused text input, textarea, or contenteditable
-- Local (Ollama) or Codex (OpenAI) backend — your choice per request
+- Local (Ollama) or Codex CLI backend — your choice per request
 - Single-suggestion review: see the correction, click to apply
 - Progressive long-text review: long text split into blocks, reviewed one at a time
 - Selection mode: select a portion of text to review just that part
@@ -65,7 +65,7 @@ Gramma2 is an open-source Grammarly-style experiment with explicit review UX: yo
 ### Works with caveats
 
 - Rich-text editors (conservative replacement to avoid formatting damage)
-- Codex backend (requires CLI install and authentication)
+- Codex backend (requires `codex` CLI install and authentication)
 - Headed Playwright e2e on machines missing Chromium system libraries
 
 ### Out of scope
@@ -78,7 +78,7 @@ Gramma2 is an open-source Grammarly-style experiment with explicit review UX: yo
 ## How It Works
 
 1. **Chrome extension** injects a floating **G** icon next to any focused text input, textarea, or contenteditable element
-2. Clicking the icon shows a toolbar with backend options: **Local** (Ollama) or **Codex** (OpenAI)
+2. Clicking the icon shows a toolbar with backend options: **Local** (Ollama) or **Codex** (via the `codex` CLI)
 3. The extension sends the text to a local Python server (`localhost:8555`) via the background service worker
 4. The server calls the chosen LLM backend and returns a corrected suggestion
 5. Click the suggestion to replace the original text
@@ -121,6 +121,8 @@ python3 -m server.main
 
 The server validates that Ollama is reachable and the model is loaded before accepting requests. If Ollama is not running, the server exits with a clear error message. Codex CLI is checked but treated as optional.
 
+Gramma2 does not call the OpenAI API directly and does not require you to paste an API key into the extension or server. The Codex option shells out to your locally installed, already authenticated `codex` command-line tool. The goal is to reuse an existing Codex CLI subscription or login flow instead of adding separate API-key management and direct API billing to this project.
+
 ### Load the extension
 
 1. Open `chrome://extensions` in Chrome
@@ -152,10 +154,10 @@ After first use, a regenerate button appears in the toolbar to re-run with the l
 | Backend | Speed | Quality | Requires |
 |---|---|---|---|
 | **Local** (Ollama) | ~2-3s | Good for grammar fixes | Ollama running locally |
-| **Codex** (OpenAI) | ~5-8s | Excellent | Codex CLI installed + authenticated |
+| **Codex** (CLI) | ~5-8s | Excellent | `codex` CLI installed + authenticated |
 | **Fake** | Instant | N/A (`Fixed: ...` test stub) | Nothing (used in tests) |
 
-If Codex CLI is not installed, the server starts normally with a notice. Requests to the codex backend will return an error; use the local backend instead.
+Codex requests are executed through the local `codex` CLI, not through direct API calls from Gramma2 itself. If Codex CLI is not installed, the server starts normally with a notice. Requests to the codex backend will return an error; use the local backend instead.
 
 ## Running Tests
 
