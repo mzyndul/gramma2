@@ -9,4 +9,5 @@ build/
 logs/
 .env
 assets/demo.mp4
+assets/demo2.mp4
 assets/demo.gif

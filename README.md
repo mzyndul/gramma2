@@ -8,17 +8,23 @@ Local-first browser writing assistant built as a Chrome extension plus FastAPI s
 
 ## Demo
 
-### Default suggestion popup
+### Simple replace
 
 Single-field workflow: focus a text input, open the toolbar, request a fix, and apply the suggestion.
 
-![Default suggestion popup](assets/suggestion-popup.gif)
+![Simple replace](assets/suggestion-popup.gif)
 
 ### Replace a sentence
 
 Selection mode lets you target only part of a larger text instead of rewriting the whole field.
 
 ![Replace a sentence](assets/replace-sentence.gif)
+
+### Replace sentence by sentence
+
+Longer text can also be reviewed incrementally so you can approve changes one block at a time.
+
+![Replace sentence by sentence](assets/sentence-by-sentence.gif)
 
 ### Replace rich text safely
 
