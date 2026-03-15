@@ -1,10 +1,32 @@
 # Gramma2
 
-An open-source browser writing assistant. Focus any text field, click the **G** icon, pick a backend, review the suggestion, click to apply.
+Local-first browser writing assistant built as a Chrome extension plus FastAPI server. Focus any text field, click the floating **G** icon, choose a backend, review the suggestion, and apply it only if you want it.
 
 ## Demo
 
-[Watch the demo video](assets/demo.mp4)
+### Default suggestion popup
+
+Single-field workflow: focus a text input, open the toolbar, request a fix, and apply the suggestion.
+
+![Default suggestion popup](assets/suggestion-popup.gif)
+
+### Replace a sentence
+
+Selection mode lets you target only part of a larger text instead of rewriting the whole field.
+
+![Replace a sentence](assets/replace-sentence.gif)
+
+### Replace rich text safely
+
+Rich-text editors use a conservative flow so formatting is not silently destroyed.
+
+![Replace rich text safely](assets/replace-rich-text.gif)
+
+### Bulk replace longer text
+
+Longer text can be reviewed block by block, then applied progressively or in one pass.
+
+![Bulk replace longer text](assets/bulk-replace.gif)
 
 ## Experiment Status
 
@@ -16,7 +38,7 @@ Gramma2 is being published as a personal GitHub experiment.
 
 ## Why This Exists
 
-Gramma2 is an open-source Grammarly-style Chrome extension with explicit review UX — you see the correction before it replaces your text. It runs local-first using Ollama, supports progressive review for longer text, and keeps everything on your machine.
+Gramma2 is an open-source Grammarly-style experiment with explicit review UX: you see the correction before anything is replaced. It runs local-first with Ollama, supports progressive review for longer text, and keeps the architecture simple enough to hack on.
 
 ## Features
 
