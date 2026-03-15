@@ -1,7 +1,7 @@
 # Gramma2
 
 <p align="center">
-  <img src="assets/gramma2.png" alt="Gramma2 icon" width="140" />
+  <img src="assets/gramma2-readme.png" alt="Gramma2 icon" width="140" />
 </p>
 
 Local-first browser writing assistant built as a Chrome extension plus FastAPI server. Focus any text field, click the floating Gramma2 icon, choose a backend, review the suggestion, and apply it only if you want it.
