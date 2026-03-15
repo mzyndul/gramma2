@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gramma2 Test Page</title>
+  <style>
+    body { padding: 40px; font-family: -apple-system, sans-serif; max-width: 700px; margin: 0 auto; }
+    h1 { color: #333; }
+    h2 { color: #666; margin-top: 30px; }
+    input, textarea { width: 100%; padding: 10px; font-size: 16px; box-sizing: border-box; }
+    .editable { border: 1px solid #ccc; padding: 10px; min-height: 80px; font-size: 16px; border-radius: 4px; }
+    iframe { width: 100%; height: 180px; border: 1px solid #ccc; }
+    .spacer { height: 200px; } /* Ensure scrolling works */
+  </style>
+</head>
+<body>
+  <h1>Gramma2 Test Page</h1>
+  <p>Each field below contains intentionally poor grammar for testing.</p>
+
+  <h2>Text Input (short -whole-text flow)</h2>
+  <input type="text" id="test-input"
+         value="He go to the store yesterday and buyed milk.">
+
+  <h2>Textarea (6 sentences -progressive review)</h2>
+  <textarea id="test-textarea" rows="6">Their going to the park tommorow. Me and him wants to played football. The weathers is very good today so we doesnt need umbrella. She have been working on this project since three years. Yesterday I seen a movie that was really good and I telled all my friends about it. The childrens was playing in the garden while their parents was talking.</textarea>
+
+  <h2>Contenteditable Div (20 sentences - progressive review)</h2>
+  <div id="test-contenteditable" class="editable" contenteditable="true">She dont knows what she wants. The informations is not correct and we needs to fixed it before the meeting start. Him and me was suppose to finish the report by friday but we runned out of time. The datas shows that the companys profits has been increasing steadily. Each of the students need to submits their assignments before the deadlines. The manager have already spoke to the team about this issues. We was told that the new policys will be implemented next month. Their is many reasons why this approach dont works for us. The documents was reviewed by the committe and they finded several errors. Nobody dont want to takes responsibility for what have happened. The team have been working very hardly on this project since weeks. Me and her was discussing about the best solutions for hours. The informations what we received yesterday was very confusing for everyone. He dont believed that the results could be achieved so fastly. The companies who doesnt innovate will eventually fails in the market. We has already submited the proposal but they hasnt responded yet. The childs was playing outside when it started to raining very heavy. She telled me that the meeting have been postponed to next weeks. The report what he writed contains many grammatical errors and mistakes. All of the employees needs to completed the training before december.</div>
+
+  <h2>Rich Contenteditable (with formatting)</h2>
+  <div id="test-rich-contenteditable" class="editable" contenteditable="true">The <strong>project manager</strong> dont have enough <em>experience</em> to leads the team. Bugs is reported by the <strong>Customer Unit</strong> and they needs to be <a href="#">triaged</a> quickly. The <code>API endpoint</code> are returning wrong <em>status codes</em> for error responses.</div>
+
+  <h2>Open Shadow DOM Input</h2>
+  <div id="shadow-host"></div>
+
+  <h2>Same-Origin Iframe Textarea</h2>
+  <iframe id="test-iframe" srcdoc='<!DOCTYPE html><html><body style="font-family:sans-serif;padding:12px;"><textarea id="frame-textarea" style="width:100%;height:100px;">This are text inside iframe and it need grammar help.</textarea></body></html>'></iframe>
+
+  <div class="spacer"></div>
+
+  <script>
+    const host = document.getElementById("shadow-host");
+    const root = host.attachShadow({ mode: "open" });
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = `
+      <input id="shadow-input" type="text" value="My shadow dom sentence are broken too." style="width:100%;padding:10px;font-size:16px;box-sizing:border-box;">
+    `;
+    root.appendChild(wrapper);
+  </script>
+</body>
+</html>

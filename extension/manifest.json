@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Gramma2",
+  "version": "1.0",
+  "description": "Local grammar improvement tool",
+  "permissions": [],
+  "host_permissions": ["http://localhost:8555/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle",
+      "all_frames": true,
+      "match_about_blank": true,
+      "match_origin_as_fallback": true
+    }
+  ]
+}

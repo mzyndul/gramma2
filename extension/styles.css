@@ -1,0 +1,294 @@
+.gramma2-icon {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #4CAF50;
+  z-index: 2147483647;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.gramma2-icon:hover {
+  transform: scale(1.1);
+}
+
+.gramma2-popup {
+  position: absolute;
+  z-index: 2147483647;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  min-width: 280px;
+  max-width: 500px;
+  display: none;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.gramma2-toolbar {
+  display: flex;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+  border-radius: 8px 8px 0 0;
+}
+
+.gramma2-tab {
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s ease, color 0.15s ease;
+  border-bottom: 2px solid transparent;
+  user-select: none;
+}
+
+.gramma2-tab:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.gramma2-tab-active {
+  color: #4CAF50;
+  border-bottom-color: #4CAF50;
+  background: white;
+}
+
+.gramma2-tab-regen {
+  margin-left: auto;
+  font-size: 15px;
+  padding: 8px 12px;
+}
+
+.gramma2-hidden {
+  display: none !important;
+}
+
+.gramma2-content {
+  padding: 0;
+}
+
+.gramma2-hint {
+  padding: 14px;
+  color: #bbb;
+  text-align: center;
+  font-size: 13px;
+}
+
+.gramma2-suggestion {
+  padding: 10px 14px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  transition: background 0.15s ease;
+}
+
+.gramma2-suggestion:last-child {
+  border-bottom: none;
+}
+
+.gramma2-suggestion:hover {
+  background: #f5f5f5;
+}
+
+.gramma2-loading {
+  padding: 14px;
+  color: #999;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.gramma2-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #e0e0e0;
+  border-top-color: #4CAF50;
+  border-radius: 50%;
+  animation: gramma2-spin 0.6s linear infinite;
+}
+
+@keyframes gramma2-spin {
+  to { transform: rotate(360deg); }
+}
+
+.gramma2-error {
+  padding: 14px;
+  color: #e53935;
+  text-align: center;
+}
+
+/* Rich text fallback */
+.gramma2-rich-warning {
+  padding: 8px 14px;
+  font-size: 11px;
+  color: #e67e22;
+  background: #fef9e7;
+  border-bottom: 1px solid #eee;
+}
+
+.gramma2-rich-fallback {
+  padding: 14px;
+}
+
+.gramma2-rich-fallback-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.gramma2-rich-fallback-subtitle {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+/* Batch summary */
+.gramma2-summary {
+  padding: 14px;
+}
+
+.gramma2-summary-title {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.gramma2-summary-subtitle {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 12px;
+}
+
+/* Review header */
+.gramma2-review-header {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  background: #fafafa;
+}
+
+.gramma2-review-count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Review sentence blocks */
+.gramma2-review-original {
+  padding: 10px 14px;
+  color: #999;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  background: #fdf2f2;
+}
+
+.gramma2-review-suggestion {
+  padding: 10px 14px;
+  color: #333;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+  background: #f2fdf3;
+}
+
+/* Action buttons row */
+.gramma2-review-actions {
+  padding: 10px 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.gramma2-btn-primary {
+  padding: 6px 14px;
+  background: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.gramma2-btn-primary:hover {
+  background: #43a047;
+}
+
+.gramma2-btn-secondary {
+  padding: 6px 14px;
+  background: #f5f5f5;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.gramma2-btn-secondary:hover {
+  background: #eee;
+}
+
+/* Status messages */
+.gramma2-no-changes {
+  padding: 14px;
+  color: #999;
+  text-align: center;
+  font-size: 13px;
+}
+
+.gramma2-done {
+  padding: 14px;
+  color: #4CAF50;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Progressive long-text states */
+.gramma2-preparing {
+  padding: 14px;
+}
+
+.gramma2-preparing-subtitle {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.gramma2-review-ready {
+  float: right;
+  font-size: 11px;
+  color: #999;
+  font-weight: 400;
+}
+
+.gramma2-waiting {
+  padding: 14px;
+}
+
+.gramma2-waiting-progress {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 6px;
+}
+
+.gramma2-aggressive {
+  padding: 14px;
+}
+
+.gramma2-aggressive-progress {
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+  margin-top: 6px;
+}
