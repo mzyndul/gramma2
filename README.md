@@ -97,7 +97,7 @@ For longer text, the extension automatically splits it into sentence-aligned blo
 ### Install
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/mzyndul/gramma2.git
 cd gramma2
 python3 -m venv .venv
 source .venv/bin/activate
